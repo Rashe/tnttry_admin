@@ -14,7 +14,16 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+
+switch($_SERVER['SERVER_NAME']) {
+    case 'localhost':
+        $config['base_url'] = 'http://localhost/tnttry_admin/';
+        break;
+    default: //live
+        $config['base_url'] = 'http://yourdomain.com/';
+}
+
+//$config['base_url']	= 'localhost/tnttry';
 
 /*
 |--------------------------------------------------------------------------
